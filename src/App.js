@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Meme />
-      <AppBC darkMode={false} />
+      <AppBC darkMode={true} />
     </div>
   );
 }
