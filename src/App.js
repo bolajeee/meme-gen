@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
 import AppBC from "./Boxes/AppBC";
+import Joke from "./Joke/Joke";
 
 
 
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <Header />
       <Meme />
-      <AppBC darkMode={true} />
+      {/* <AppBC darkMode={true} /> */}
+      <Joke />
     </div>
   );
 }
