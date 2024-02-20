@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles.css"
+import ReactDOM from 'react-dom';
 
 export default function Arrays() {
     /**
@@ -9,16 +9,20 @@ export default function Arrays() {
      * 
      * Don't worry about fixing `addItem` quite yet.
      */
-
-    const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]) 
+    const  [thingsArray, setThingArray] = React.useState(["Thing 1", "Thing 2", "Thing 3"])
     
     function addItem() {
-        setThingsArray(prevThingsArray => {
-            return [...prevThingsArray, `Thing ${thingsArray.length + 1}`]
+        const newItem = setThingArray(newThingsArr => {
+            return [
+                ...newThingsArr,
+                `Thing ${newThingsArr.length + 1}`
+            ]
         })
     }
     
-    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+    const thingsElements = thingsArray.map(thing => {
+        return <p key={thing}>{thing}</p>
+    })
     
     return (
         <div>
