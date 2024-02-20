@@ -30,10 +30,10 @@ export default function CmlpxStateObj() {
     return (
         <main>
             <article className="card">
-                <img src="../images/profile.jpg" className="card--image" />
+                <img src="../CSOimages/profile.jpg" className="card--image" />
                     <div className="card--info">
                     <img 
-                        src={contact.isFavorite? "../images/star-filled.svg" : "../images/star-empty.svg"} 
+                        src={contact.isFavorite? "../CSOimages/star-filled.svg" : "../CSOimages/star-empty.svg"} 
                         className="card--favorite"
                         onClick={toggleFavorite}
                     />
