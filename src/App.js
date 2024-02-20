@@ -1,7 +1,8 @@
 import "./App.css";
-import Header from "./MemeGen/Header";
-import Meme from "./MemeGen/Meme";
-// import AppBC from "./Boxes/AppBC";
+// import Header from "./MemeGen/Header";
+// import Meme from "./MemeGen/Meme";
+// import CountApp from "./count/CountIndex";
+import AppBC from "./Boxes/AppBC";
 // import Joke from "./Joke/Joke";
 // import Arrays from "./complexStatesArrays/ArrProj"
 // import CsoIndex from "./complexStatesObjects/CmlpxStateObj";
@@ -11,11 +12,12 @@ import Meme from "./MemeGen/Meme";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Meme />
-      {/* <AppBC darkMode={true} /> */}
+      {/* <Header />
+      <Meme /> */}
+      <AppBC darkMode={true} />
       {/* <Joke /> */}
       {/* <CsoIndex /> */}
+      {/* <CountApp /> */}
     </div>
   );
 }

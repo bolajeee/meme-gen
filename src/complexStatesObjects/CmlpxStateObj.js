@@ -1,5 +1,6 @@
 import React from "react"
 import "./Csostyles.css"
+import Star from "./Star"
 
 
 export default function CmlpxStateObj() {
@@ -12,12 +13,7 @@ export default function CmlpxStateObj() {
         isFavorite: true
     })
 
-    /**
-     * Challenge: Fill in the values in the markup
-     * using the properties of our state object above
-     * (Ignore `isFavorite` for now)
-     */
-    
+ 
     function toggleFavorite() {
         setContact(newContact => {
             return {
@@ -32,11 +28,10 @@ export default function CmlpxStateObj() {
             <article className="card">
                 <img src="../CSOimages/profile.jpg" className="card--image" />
                     <div className="card--info">
-                    <img 
-                        src={contact.isFavorite? "../CSOimages/star-filled.svg" : "../CSOimages/star-empty.svg"} 
-                        className="card--favorite"
-                        onClick={toggleFavorite}
-                    />
+                    <Star
+                        isFilled={contact.isFavorite ? "../CSOimages/star-filled.svg" : "../CSOimages/star-empty.svg"}
+                        handleToggleFavorite= {toggleFavorite}
+                        />
                     <h2 className="card--name">
                         {contact.firstName} {contact.lastName}
                     </h2>

@@ -15,7 +15,7 @@ export default function AppBC(props) {
     }
 
     const aBox = boxArray.map(box => {
-        return <Box key={box.id} on={box.on} handleToggle={() => toggle(box.id)} />
+        return <Box key={box.id} id={box.id} on={box.on} handleToggle={toggle} />
     })
 
     return (

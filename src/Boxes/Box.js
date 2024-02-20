@@ -1,5 +1,5 @@
 import react from "react"
-import "./style.css"
+import "./Bstyle.css"
 
 
 export default function Box(props) {
@@ -7,7 +7,7 @@ export default function Box(props) {
         backgroundColor: props.on? "#222222" : "#cccccc"
     }
 
-    return <div style={styles} className="box" onClick={props.handleToggle()}>
+    return <div style={styles} className="box" onClick={() => props.handleToggle(props.id)}>
  
     </div>
 }
