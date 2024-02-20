@@ -1,5 +1,4 @@
 import React from "react"
-import jokeData from "./jokeData"
 
 export default function Joke(props) {
     /**
@@ -7,21 +6,17 @@ export default function Joke(props) {
      * - Create state `isShown` (boolean, default to `false`)
      * - Add a button that toggles the value back and forth
      */
-    
     const [isShown, setIsShown] = React.useState(false)
 
-    function toggle() {
-        setIsShown(prevIsShown => {
-            return prevIsShown = !prevIsShown
-        })
-
-       }
+    function toggleVisible() {
+        setIsShown(prevIsShown => !prevIsShown)
+    }
 
     return (
         <div>
             {props.setup && <h3>{props.setup}</h3>}
-            <p>{props.punchline}</p>
-            <button className="btn" onClick={toggle}>Show</button>
+            {isShown && <p>{props.punchline}</p>}
+            <button className="Btn" onClick={toggleVisible}>{isShown? "Hide Punchline" : "show Punchline"}</button>
             <hr />
         </div>
     )
