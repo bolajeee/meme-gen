@@ -1,15 +1,22 @@
 import React from "react";
 
 export default function Forms() {
-    const [formInput, setFromInput] = React.useState({ firstname: "", lastname: ""})
+    const [formInfo, setFromInfo] = React.useState({
+        firstname: "",
+        lastname: "",
+        Email: "",
+        comments: "",
+       
+    })
     
-    console.log(formInput)
+    console.log(formInfo)
 
     function handleChange(event) {
-        setFromInput(prevFromInput => {
+        const {name, value, type, checked} = event.target
+        setFromInfo(prevFromInfo => {
             return ({
-                ...prevFromInput,
-                [event.target.name]: event.target.value
+                ...prevFromInfo,
+                [name]: type === "checkbox"? checked : value
             })
         })
     }
@@ -21,6 +28,7 @@ export default function Forms() {
                 name="firstname"
                 placeholder="First name"
                 onChange={handleChange}
+                value={formInfo.firstname}
             />
 
             <input
@@ -28,7 +36,32 @@ export default function Forms() {
                 name="lastname"
                 placeholder="Last name"
                 onChange={handleChange}
+                value={formInfo.lastname}
             />
+
+            <input
+                type="email"
+                name="email"
+                placeholder="dare123@gmial.com"
+                onChange={handleChange}
+                value={formInfo.email}
+            />
+            
+            <textarea
+                type="text"
+                name="comments"
+                placeholder="Please add a comment"
+                value={formInfo.comments}
+                onChange={handleChange}
+            />
+
+            <input
+                type="checkbox"
+                name="checkbox"
+                id="isFriendly"
+                checked={formInfo.isFriendly}
+            />
+            <label htmlFor="isFriendly">Are you frinedly?</label>
         </form>
     )
 
