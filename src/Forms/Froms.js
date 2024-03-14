@@ -6,10 +6,9 @@ export default function Forms() {
         lastname: "",
         Email: "",
         comments: "",
-       
+        favColor:""
     })
     
-    console.log(formInfo)
 
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -21,8 +20,12 @@ export default function Forms() {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 name="firstname"
@@ -62,6 +65,60 @@ export default function Forms() {
                 checked={formInfo.isFriendly}
             />
             <label htmlFor="isFriendly">Are you frinedly?</label>
+
+
+            <input
+                type="radio"
+                name="employment"
+                id="unemployed"
+                onChange={handleChange}
+                value="Unemployed"
+                checked={formInfo.employed === "Unemployed"}
+
+            />
+
+            <label htmlFor="unemployed">Unemployed</label>
+            
+            <input
+                type="radio"
+                name="employment"
+                id="employed"
+                onChange={handleChange}
+                value="employed"
+                checked={formInfo.employed === "employed"}
+            />
+
+            <label htmlFor="employed">Employed</label>
+            
+            <input
+                type="radio"
+                name="employment"
+                id="student"
+                onChange={handleChange}
+                value="student"
+                checked={formInfo.employed === "student"}
+
+            />
+
+            <label htmlFor="student">Student</label>
+
+            <select
+                id="favColor"
+                value={formInfo.favColor}
+                name="favColor"
+                onChange={handleChange}
+            >
+
+            <option value="">--Choose--</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="purple">Purple</option>
+            <option value="violet">Violet</option>
+                
+            </select>
+
+            <button>Submit</button>
         </form>
     )
 

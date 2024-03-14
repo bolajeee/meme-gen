@@ -8,6 +8,7 @@ import "./App.css";
 // import CsoIndex from "./complexStatesObjects/CmlpxStateObj";
 // import Message from "./Joke/Messages";
 import Forms from "./Forms/Froms";
+import Form2 from "./Forms/Form2";
 
 
 
@@ -22,6 +23,7 @@ function App() {
       {/* <CountApp /> */}
       {/* <Message /> */}
       <Forms />
+      <Form2 />
     </div>
   );
 }
