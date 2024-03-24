@@ -41,10 +41,7 @@ main {
     gap: 17px;
     margin-bottom: 17px;
 }
-.form--label{
-    display: grid;
-    grid-row: auto;
-}
+
 .form--input {
     font-family: "Karla", sans-serif;
     border-radius: 5px;
@@ -69,6 +66,10 @@ main {
 .meme--image {
     max-width: 100%;
     border-radius: 3px;
+    display: "flex"; 
+    justify-Content: "center";
+    align-Items: "center";
+    height: "100vh"
 }
 
 .meme--text {

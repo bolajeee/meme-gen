@@ -40,12 +40,10 @@ const Meme = () => {
     
     <form className="form">
       <div className="form--box">
-        <label htmlFor="topText" className="form--label">
-          Top Text
-        </label>
+       
     
         <input
-            id="topText"
+            placeholder="Top Text"
             name="topText"
             value={meme.topText}
             onChange={handleChange}
@@ -53,12 +51,10 @@ const Meme = () => {
             className="form--input" 
           ></input>
 
-        <label htmlFor="bottomText" className="form--label">
-          Bottom Text
-        </label>
+      
        
       <input
-            id="bottomText"
+            placeholder="Bottom Text"
             name="bottomText"
             value={meme.bottomText}
             onChange={handleChange}
@@ -76,7 +72,7 @@ const Meme = () => {
     </form>
 
       <div className="meme">
-        <img className="meme--image" src={allMemeImages.randomImage} />
+        <img className="meme--image" src={allMemeImages.randomImage}/>
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{ meme.bottomText}</h2>
         </div>
