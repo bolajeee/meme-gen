@@ -61,14 +61,13 @@ main {
 
 .meme {
     position: relative;
+
 }
 
 .meme--image {
-    max-width: 100%;
+    max-width: 60%;
+    padding-left: 40%;
     border-radius: 3px;
-    display: "flex"; 
-    justify-Content: "center";
-    align-Items: "center";
     height: "100vh"
 }
 
