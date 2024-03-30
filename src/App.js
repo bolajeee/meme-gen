@@ -1,6 +1,6 @@
 import "./App.css";
-import Header from "./MemeGen/Header";
-import Meme from "./MemeGen/Meme";
+// import Header from "./MemeGen/Header";
+// import Meme from "./MemeGen/Meme";
 // import CountApp from "./count/CountIndex";
 // import AppBC from "./Boxes/AppBC";
 // import JIndex from "./Joke/JIndex";
@@ -10,14 +10,15 @@ import Meme from "./MemeGen/Meme";
 // import Forms from "./Forms/Froms";
 // import Form2 from "./Forms/Form2";
 // import UseEffect from "./UseEffect/UseEffect";
+import WindowTrackerApp from "./WindowTracker/WindowTrackerApp";
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Meme />
+      {/* <Header />
+      <Meme /> */}
       {/* <AppBC darkMode={true} /> */}
       {/* <JIndex /> */}
       {/* <CsoIndex /> */}
@@ -26,6 +27,7 @@ function App() {
       {/* <Forms />
       <Form2 /> */}
       {/* <UseEffect /> */}
+      <WindowTrackerApp />
     </div>
   );
 }
