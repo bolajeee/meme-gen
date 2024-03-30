@@ -10,16 +10,25 @@ const Meme = () => {
     randomImage: "../CSOimages/profile.jpg"
   })
   
-  const [allMemeImages, setallMemeImages] = React.useState(memesData)
+  const [allMemes, setallMemes] = React.useState([])
+
+  React.useEffect(() => {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then(res => res.json())
+    .then(data => setallMemes(data.data.memes))
+  },[])
+
+  console.log(allMemes)
+  
 
   function getNewImage() {
-    let memeInfo = allMemeImages.data.memes
-    const index = Math.floor(Math.random() * memeInfo.length)
+
+    const index = Math.floor(Math.random() * allMemes.length)
     
-    return setallMemeImages(prevMeme => {
+    return setMeme(prevMeme => {
       return {
         ...prevMeme,
-        randomImage: memeInfo[index].url
+        randomImage: allMemes[index].url
       }
     })
   }
@@ -72,7 +81,7 @@ const Meme = () => {
     </form>
 
       <div className="meme">
-        <img className="meme--image" src={allMemeImages.randomImage}/>
+        <img className="meme--image" src={meme.randomImage}/>
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{ meme.bottomText}</h2>
         </div>
